@@ -9,8 +9,8 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 ### Dependencies
 
 - [Robot Operating System (ROS) Melodic Morenia](http://wiki.ros.org/melodic)
-- [CMake](https://cmake.org/)
 - [Ubuntu 18.04.6 LTS](https://releases.ubuntu.com/18.04/)
+- [CMake](https://cmake.org/)
 
 ### ROS Packages
 
@@ -25,33 +25,41 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 
 ### Creating a map
 There should be three separate terminals to create and save a map. One is for OpenSlam's Gmapping package, another for operating the bot's movements, and the third for saving the map.
- * gmapping:
+1. gmapping:
 ```
-  roslaunch mailbot_navigation gmapping.launch myWorld:=<example world filename in ROS package> x:=[float number] y:=[float number] z:=[float number] roll:=[radians] pitch:=[radians] yaw:=[radians]
+  roslaunch mailbot_navigation gmapping.launch
 ```
- * teleop_twist_keyboard
+    Params:
+    1.  myWorld:=<example world filename in ROS package>
+    2. x:=[float number]
+    3. y:=[float number]
+    4. z:=[float number]
+    5. roll:=[radians]
+    6. pitch:=[radians]
+    7. yaw:=[radians]
+2. teleop_twist_keyboard
 ```
-  roslaunch mailbot_navigation teleop.launch
+  roslaunch mailbot_control teleop.launch
 ```
- * map_server (check the YAML file generated and make sure only the PGM filename is used, such as 'cafe.pgm')
+3. map_server (check the YAML file generated and make sure only the PGM filename is used, such as 'cafe.pgm')
 ```
   cd ~/src/mailbot_navigation/maps/
   rosrun map_server map_saver -f <myWorld name used for gmapping>
 ```
 
-### Navigation in a map
+### Navigation in a world
 Be sure to run the navigation after a gmapping of the example world you wish to use.
- * navigation:
+1. navigation:
 ```
   roslaunch mailbot_navigation navigation.launch
 ```
 
 ### Viewing the mailbot
- * To spawn the mailbot in an empty world, run the below command in a terminal
+1. To spawn the mailbot in an empty world, run the below command in a terminal
 ```
   roslaunch mailbot_description spawn.launch
 ```
- * To view the mailbot in RViz:
+1. To view the mailbot in RViz:
 ```
   roslaunch mailbot_description rviz.launch
 ```
