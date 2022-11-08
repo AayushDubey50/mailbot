@@ -29,7 +29,7 @@ There should be three separate terminals to create and save a map. One is for Op
 ```
   roslaunch mailbot_navigation gmapping.launch
 ```
-    Params:
+Params:
     1.  myWorld:=<example world filename in ROS package>
     2. x:=[float number]
     3. y:=[float number]
