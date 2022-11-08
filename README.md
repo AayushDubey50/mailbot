@@ -9,8 +9,8 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 ### Dependencies
 
 - [Robot Operating System (ROS) Melodic Morenia](http://wiki.ros.org/melodic)
-- [CMake](https://cmake.org/) Version: 3.10.2+
-- [Ubuntu 18.04.6 LTS] https://releases.ubuntu.com/18.04/
+- [CMake](https://cmake.org/)
+- [Ubuntu 18.04.6 LTS](https://releases.ubuntu.com/18.04/)
 
 ### ROS Packages
 
@@ -21,7 +21,7 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 
 ## Simulation Instructions
 
-- Creating a map
+### Creating a map
 There should be three separate terminals to create and save a map. One is for OpenSlam's Gmapping package, another for operating the bot's movements, and the third for saving the map.
  * gmapping:
 ```
@@ -36,13 +36,13 @@ There should be three separate terminals to create and save a map. One is for Op
   cd ~/src/mailbot_navigation/maps/
   rosrun map_server map_saver -f <myWorld name used for gmapping>
 ```
-- Navigation
+### Navigation
 Be sure to run the navigation after a gmapping of 
  * :
 ```
   roslaunch mailbot_navigation gmapping.launch
 ```
-- Spawning
+### Spawning
  * To spawn the mailbot in an empty world, run the below command in a terminal
 ```
   roslaunch env turtlebot3_env_open_spaces_wsh-edit.launch
