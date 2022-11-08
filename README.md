@@ -17,6 +17,8 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 - [gmapping](http://wiki.ros.org/gmapping)
 - [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard)
 - [map_server](http://wiki.ros.org/map_server)
+- [rviz](http://wiki.ros.org/rviz)
+- [gazebo_ros](http://wiki.ros.org/gazebo_ros)
 
 
 ## Simulation Instructions
