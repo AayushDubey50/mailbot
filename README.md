@@ -30,7 +30,7 @@ There should be three separate terminals to create and save a map. One is for Op
 roslaunch mailbot_navigation gmapping.launch
 ```
 Params:
-* myWorld:=<example world filename in ROS package>
+* myWorld:=(example world filename in ROS package)
 * x:=[float number]
 * y:=[float number]
 * z:=[float number]
@@ -44,8 +44,8 @@ Params:
 ```
 3. map_server (check the YAML file generated and make sure only the PGM filename is used, such as 'cafe.pgm')
 ```
-  cd ~/src/mailbot_navigation/maps/
-  rosrun map_server map_saver -f <myWorld name used for gmapping>
+  cd ~/src/mailbot_navigation/maps/ ;
+  rosrun map_server map_saver -f (example world filename in ROS package)
 ```
 
 ### Navigation in a world
@@ -54,6 +54,14 @@ Be sure to run the navigation after a gmapping of the example world you wish to 
 ```
   roslaunch mailbot_navigation navigation.launch
 ```
+Params:
+* myWorld:=(example world filename in ROS package)
+* x:=[float number]
+* y:=[float number]
+* z:=[float number]
+* roll:=[radians]
+* pitch:=[radians]
+* yaw:=[radians]
 
 ### Viewing the mailbot
 1. To spawn the mailbot in an empty world, run the below command in a terminal
