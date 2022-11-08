@@ -68,7 +68,7 @@ Params:
 ```
   roslaunch mailbot_description spawn.launch
 ```
-1. To view the mailbot in RViz:
+2. To view the mailbot in RViz:
 ```
   roslaunch mailbot_description rviz.launch
 ```
