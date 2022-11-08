@@ -45,25 +45,5 @@ Be sure to run the navigation after a gmapping of
 ### Spawning
  * To spawn the mailbot in an empty world, run the below command in a terminal
 ```
-  roslaunch env turtlebot3_env_open_spaces_wsh-edit.launch
+  roslaunch mailbot_description spawn.launch
 ```
- * To run the project on dynamic world (with moving humans)  .. [work in progress]
-
-        roslaunch env turtlebot3_env_open_spaces_wwh-edit.launch
-
-2. Run the simulation
-
-* To run the simulation, in another sourced terminal:
-
-        rosrun orca test_sim
-	
-3. Run Obstacle detector package:
-* First run split_scan package, then obstacle tracker:
-
-```
- 	roslaunch split_scan split_scan.launch
-```
-```
-	roslaunch obstacle_detector detector.launch
-```
-
