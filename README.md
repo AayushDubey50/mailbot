@@ -30,13 +30,13 @@ There should be three separate terminals to create and save a map. One is for Op
 roslaunch mailbot_navigation gmapping.launch
 ```
 Params:
-1. myWorld:=<example world filename in ROS package>
-2. x:=[float number]
-3. y:=[float number]
-4. z:=[float number]
-5. roll:=[radians]
-6. pitch:=[radians]
-7. yaw:=[radians]
+* myWorld:=<example world filename in ROS package>
+* x:=[float number]
+* y:=[float number]
+* z:=[float number]
+* roll:=[radians]
+* pitch:=[radians]
+* yaw:=[radians]
 
 2. teleop_twist_keyboard
 ```
