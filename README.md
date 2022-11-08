@@ -25,7 +25,7 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 There should be three separate terminals to create and save a map. One is for OpenSlam's Gmapping package, another for operating the bot's movements, and the third for saving the map.
  * gmapping:
 ```
-  roslaunch mailbot_navigation gmapping.launch myWorld:=<example world filename in ROS package> x:=0 y:=0 z:=0 roll:=0 pitch:=0 yaw:=0
+  roslaunch mailbot_navigation gmapping.launch myWorld:=<example world filename in ROS package> x:=[float number] y:=[float number] z:=[float number] roll:=[radians] pitch:=[radians] yaw:=[radians]
 ```
  * teleop_twist_keyboard
 ```
@@ -36,12 +36,14 @@ There should be three separate terminals to create and save a map. One is for Op
   cd ~/src/mailbot_navigation/maps/
   rosrun map_server map_saver -f <myWorld name used for gmapping>
 ```
-### Navigation
+
+### Navigation in a map
 Be sure to run the navigation after a gmapping of the example world you wish to use.
  * navigation:
 ```
   roslaunch mailbot_navigation navigation.launch
 ```
+
 ### Viewing the mailbot
  * To spawn the mailbot in an empty world, run the below command in a terminal
 ```
@@ -49,5 +51,5 @@ Be sure to run the navigation after a gmapping of the example world you wish to 
 ```
  * To view the mailbot in RViz:
 ```
-  roslaunch mailbot_description mailbot_rviz.launch
+  roslaunch mailbot_description rviz.launch
 ```
