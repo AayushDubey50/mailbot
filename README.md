@@ -37,13 +37,17 @@ There should be three separate terminals to create and save a map. One is for Op
   rosrun map_server map_saver -f <myWorld name used for gmapping>
 ```
 ### Navigation
-Be sure to run the navigation after a gmapping of 
- * :
+Be sure to run the navigation after a gmapping of the example world you wish to use.
+ * navigation:
 ```
-  roslaunch mailbot_navigation gmapping.launch
+  roslaunch mailbot_navigation navigation.launch
 ```
-### Spawning
+### Viewing the mailbot
  * To spawn the mailbot in an empty world, run the below command in a terminal
 ```
   roslaunch mailbot_description spawn.launch
+```
+ * To view the mailbot in RViz:
+```
+  roslaunch mailbot_description mailbot_rviz.launch
 ```
