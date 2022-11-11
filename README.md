@@ -42,7 +42,7 @@ Params:
 ```
   roslaunch mailbot_control teleop.launch
 ```
-3. map_server (check the YAML file generated and make sure only the PGM filename is used, such as 'cafe.pgm')
+3. map_server (check the YAML file generated and make sure the correct PGM filename is used, such as 'cafe.pgm')
 ```
   cd ~/src/mailbot_navigation/maps/ ;
   rosrun map_server map_saver -f (example world filename in ROS package)
