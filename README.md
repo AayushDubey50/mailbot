@@ -63,6 +63,8 @@ Params:
 * pitch:=[radians]
 * yaw:=[radians]
 
+Make sure that the 2D Pose Estimate in RViz is being used to approximate the position and orientation of the mailbot. Then, you can use the 2D Nav Goal in RViz to command the mailbot to set on course its path.
+
 ### Viewing the mailbot
 1. To spawn the mailbot in an empty world, run the below command in a terminal
 ```
