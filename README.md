@@ -10,7 +10,7 @@ This portfolio is a simple navigation simulator of a custom robot called 'mailbo
 
 - [Robot Operating System (ROS) Melodic Morenia](http://wiki.ros.org/melodic)
 - [Ubuntu 18.04.6 LTS](https://releases.ubuntu.com/18.04/)
-- [CMake](https://cmake.org/)
+- [CMake 2.8.3](https://cmake.org/)
 
 ### ROS Packages
 
