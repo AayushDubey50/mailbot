@@ -1,2 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <launch>
+  <!-- Map Server -->
+  <arg name="map_file" default="$(find mailbot_navigation)/maps/cafe_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <!-- AMCL -->
+  <arg name="scan_topic" default="scan"/>
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <arg name="base_frame_id" default="base_footprint"/>
+  <node pkg="amcl" type="amcl" name="amcl">
+    <param name="scan_topic" value="$(arg scan_topic)"/>
+    <param name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <param name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <param name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    <param name="base_frame_id" value="$(arg base_frame_id)"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="transform_tolerance" value="0.5"/>
+  </node>
+
 </launch>

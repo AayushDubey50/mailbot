@@ -1,0 +1,8 @@
+prefix=/home/user/simulation_ws/devel
+
+Name: mailbot_navigation
+Description: Description of mailbot_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

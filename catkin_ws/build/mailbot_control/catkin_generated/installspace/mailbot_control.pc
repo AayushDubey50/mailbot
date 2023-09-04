@@ -1,0 +1,8 @@
+prefix=/home/user/simulation_ws/install
+
+Name: mailbot_control
+Description: Description of mailbot_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

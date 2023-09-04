@@ -1,2 +1,67 @@
-<robot>
+<?xml version="1.0"?>
+<robot name="mailbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="mailbot_properties.xacro"/>
+
+  <link name="base_footprint"></link>
+  <joint name="world_base_joint" type="fixed">
+    <origin xyz="0 0 ${wheel_radius + (base_height / 2)}" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <!-- Base -->
+  <xacro:link_prism name="base" color="${base_color}" mass="${base_mass}" length="${base_length}" height="${base_height}">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:link_prism>
+
+  <!-- Front right wheel -->
+  <xacro:joint_wheel name="fr_wheel" parent="base" child="fr_wheel">
+    <origin xyz="${base_length/2} -${base_length/2} ${-(base_height/2)}" rpy="0 0 0"/>
+  </xacro:joint_wheel>
+  <xacro:link_cylinder name="fr_wheel" color="${wheel_color}" mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+    <origin xyz="0 -${wheel_length/2} 0" rpy="${pi/2} 0 0"/>
+  </xacro:link_cylinder>
+
+  <!-- Front left wheel -->
+  <xacro:joint_wheel name="fl_wheel" parent="base" child="fl_wheel">
+    <origin xyz="${base_length/2} ${base_length/2} ${-(base_height/2)}" rpy="0 0 0"/>
+  </xacro:joint_wheel>
+  <xacro:link_cylinder name="fl_wheel" color="${wheel_color}" mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+    <origin xyz="0 ${wheel_length/2} 0" rpy="${pi/2} 0 0"/>
+  </xacro:link_cylinder>
+
+  <!-- Rear right wheel -->
+  <xacro:joint_wheel name="rr_wheel" parent="base" child="rr_wheel">
+    <origin xyz="-${base_length/2} -${base_length/2} ${-(base_height/2)}" rpy="0 0 0"/>
+  </xacro:joint_wheel>
+  <xacro:link_cylinder name="rr_wheel" color="${wheel_color}" mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+    <origin xyz="0 -${wheel_length/2} 0" rpy="${pi/2} 0 0"/>
+  </xacro:link_cylinder>
+
+  <!-- Rear left wheel -->
+  <xacro:joint_wheel name="rl_wheel" parent="base" child="rl_wheel">
+    <origin xyz="-${base_length/2} ${base_length/2} ${-(base_height/2)}" rpy="0 0 0"/>
+  </xacro:joint_wheel>
+  <xacro:link_cylinder name="rl_wheel" color="${wheel_color}" mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+    <origin xyz="0 ${wheel_length/2} 0" rpy="${pi/2} 0 0"/>
+  </xacro:link_cylinder>
+
+  <!-- Camera -->
+  <xacro:joint_sensor name="camera" parent="base" child="camera">
+    <origin xyz="0 0 ${(base_height+camera_height)/2}" rpy="0 0 0"/>
+  </xacro:joint_sensor>
+  <xacro:link_prism name="camera" color="${camera_color}" mass="${camera_mass}" length="${camera_length}" height="${camera_height}">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:link_prism>
+
+  <!-- LIDAR -->
+  <xacro:joint_sensor name="lidar" parent="base" child="lidar">
+    <origin xyz="${base_length/2} 0 0" rpy="0 0 0"/>
+  </xacro:joint_sensor>
+  <xacro:link_prism name="lidar" color="${lidar_color}" mass="${lidar_mass}" length="${lidar_length}" height="${lidar_height}">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:link_prism>
+
+  <xacro:include filename="mailbot_gazebo_plugins.xacro"/>
+
 </robot>
